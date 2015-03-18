@@ -1,7 +1,22 @@
 <h1>Custom URL Scheme Test</h1>
 <p>
-  <a href="showroom://">アプリを起動</a>
+  <a href="showroom://">アプリを持っている場合</a>
 </p>
 <p>
-  <a href="https://itunes.apple.com/jp/app/showroom-wu-liaode-sheng-fang/id734256893?mt=8">ストアに遷移</a>
+  <a href="https://itunes.apple.com/jp/app/showroom-wu-liaode-sheng-fang/id734256893?mt=8">アプリを持っていない場合（ダウンロード）</a>
 </p>
+<script type="text/javascript">
+$(function(){
+  var userAgent = navigator.userAgent.toLowerCase();
+  if (userAgent.search(/iphone|ipad|ipod/) > -1 && userAgent.search(/fbid/) > -1) {
+    var checkedAt = new Date();
+    setTimeout(function() {
+      var t = new Date() - checkedAt;
+      if (t < 2000) {
+        window.location = "https://itunes.apple.com/jp/app/showroom-wu-liaode-sheng-fang/id734256893?mt=8";
+      }
+    }, 1000);
+    window.location = "showroom://";
+  }
+});
+</script>
