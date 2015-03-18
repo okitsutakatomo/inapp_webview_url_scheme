@@ -9,16 +9,15 @@
 <script type="text/javascript">
 $(function(){
   var userAgent = navigator.userAgent.toLowerCase();
-  $("#agent").text(userAgent);
-  // if (userAgent.search(/iphone|ipad|ipod/) > -1 && userAgent.search(/twitter/) == -1) {
-  //   var checkedAt = new Date();
-  //   setTimeout(function() {
-  //     var t = new Date() - checkedAt;
-  //     if (t < 2000) {
-  //       window.location = "https://itunes.apple.com/jp/app/showroom-wu-liaode-sheng-fang/id734256893?mt=8";
-  //     }
-  //   }, 1000);
-  //   window.location = "showroom://";
-  // }
+  if (userAgent.search(/iphone|ipad|ipod/) > -1 && (userAgent.search(/fbid/) > -1 || userAgent.search(/line/) > -1)) {
+    var checkedAt = new Date();
+    setTimeout(function() {
+      var t = new Date() - checkedAt;
+      if (t < 2000) {
+        window.location = "https://itunes.apple.com/jp/app/showroom-wu-liaode-sheng-fang/id734256893?mt=8";
+      }
+    }, 1000);
+    window.location = "showroom://";
+  }
 });
 </script>
