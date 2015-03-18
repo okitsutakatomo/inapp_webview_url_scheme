@@ -6,4 +6,7 @@ class IndexController < ApplicationController
   def auto
   end
 
+  def auto_legacy
+  end
+
 end
