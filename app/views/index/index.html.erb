@@ -5,18 +5,20 @@
 <p>
   <a href="https://itunes.apple.com/jp/app/showroom-wu-liaode-sheng-fang/id734256893?mt=8">アプリを持っていない場合（ダウンロード）</a>
 </p>
+<p id="agent"></p>
 <script type="text/javascript">
 $(function(){
   var userAgent = navigator.userAgent.toLowerCase();
-  if (userAgent.search(/iphone|ipad|ipod/) > -1 && userAgent.search(/twitter/) == -1) {
-    var checkedAt = new Date();
-    setTimeout(function() {
-      var t = new Date() - checkedAt;
-      if (t < 2000) {
-        window.location = "https://itunes.apple.com/jp/app/showroom-wu-liaode-sheng-fang/id734256893?mt=8";
-      }
-    }, 1000);
-    window.location = "showroom://";
-  }
+  $("#agent").text(userAgent);
+  // if (userAgent.search(/iphone|ipad|ipod/) > -1 && userAgent.search(/twitter/) == -1) {
+  //   var checkedAt = new Date();
+  //   setTimeout(function() {
+  //     var t = new Date() - checkedAt;
+  //     if (t < 2000) {
+  //       window.location = "https://itunes.apple.com/jp/app/showroom-wu-liaode-sheng-fang/id734256893?mt=8";
+  //     }
+  //   }, 1000);
+  //   window.location = "showroom://";
+  // }
 });
 </script>
